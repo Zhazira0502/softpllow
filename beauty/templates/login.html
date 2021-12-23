@@ -1,0 +1,122 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script type="text/javascript" src="/js/jquery-1.12.3.min.js"></script><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/ligature-symbols.min.css">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/themify-icons.css' %}">
+  <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/jquery.fancybox.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <title>Beauty Softpllow Salon</title>
+</head>
+
+<body>
+    <header class="header abs-header">
+    <div class="container">
+      <div class="row align-items-end">
+        <div class="col-md-3">
+          <a href="{% url 'index' %}" class="logo">
+            <img src="{% static 'images/logo.png' %}" alt="">
+          </a>
+        </div>
+        <div class="col-md-9">
+          <nav class="primary-menu">
+            <a href="javascript:void(0);" class="mobile-menu"><i class="ti-menu"></i></a>
+            <ul>
+              <li><a href="{% url 'index' %}">Home</a></li>
+              <li><a href="{% url 'about'%}">About</a></li>
+              <li><a href="{% url 'service' %}">Service</a></li>
+              <li><a href="{% url 'sale' %}">Sales</a></li>
+              <li><a href="{% url 'contacts' %}">Contact</a></li>
+              {% if request.user.is_authenticated %}
+              <li><a href="{% url 'logout' %}">Sign out</a></li>
+              <li>Hello {{ request.user.username }}</li>
+              {% else %}
+                <li><a href="{% url 'register' %}">Sign in</a></li>
+              {% endif %}
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+
+  <h2>Login </h2>
+         
+
+<form method="post">
+
+  {% csrf_token %}
+  {{ form.as_p }}
+    <label>
+	    I agree to the terms and conditions <input type="checkbox">
+    </label>
+</div>
+<div>
+	<input type="submit" name="Login">
+</div>
+
+</form>
+
+
+
+
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <a href="index.html" class="logo foo-logo">
+          <img src="{% static 'images/logo.png' %}" alt="">
+        </a>
+        <nav class="foo-nav">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Service</a></li>
+            <li><a href="sales.html">Sales</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="foo-social">
+          <a href="https://www.facebook.com/"><i class="ti-facebook"></i></a>
+          <a href="https://twitter.com/"><i class="ti-twitter-alt"></i></a>
+          <a href="https://instagram.com/"><i class="ti-instagram"></i></a>
+        </div>
+        <p class="copyright">COPYRIGHT SOFTPLLOW 2019 ALL RIGHTS RESERVED.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+<style> 
+
+.acc{
+  text-align: center;
+  margin: 50px;
+}
+  body {
+ background:url("{% static '13f3d4f5-3b5e-4f79-aded-4aff1fd152fd.jpg' %}");
+ background-size: cover;
+}
+form{
+  background:url("{% static '13f3d4f5-3b5e-4f79-aded-4aff1fd152fd.jpg' %}");
+   margin: auto;
+   margin-bottom: 50px;
+  width: 60%;
+  border: 3px solid black;
+  padding: 10px;
+  width: 600px;
+  top: 80px;
+}
+  h2{
+  margin: 100px;
+  
+  font-size: 50px;
+  text-align: center;
+}
+</style>

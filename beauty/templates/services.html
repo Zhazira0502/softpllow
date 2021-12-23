@@ -1,0 +1,201 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+  <head>
+
+ <title>Services</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Muli:400,700|Playfair+Display:400,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.fancybox.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <link rel="stylesheet" href="{% static 'fonts/icomoon/style.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.fancybox.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/flaticon/font/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+  </head>
+
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+     <!--    -------- Footer Section Start ------------- -->
+    <header class="header abs-header">
+    <div class="container">
+      <div class="row align-items-end">
+        <div class="col-md-3">
+          <a href="index.html" class="logo">
+            <img src="{% static 'images/logo.png' %}" alt="">
+          </a>
+        </div>
+        <div class="col-md-9">
+          <nav class="primary-menu">
+            <a href="javascript:void(0);" class="mobile-menu"><i class="ti-menu"></i></a>
+            <ul>
+              <li><a href="{% url 'index' %}">Home</a></li>
+              <li><a href="{% url 'about'%}">About</a></li>
+              <li><a href="{% url 'service' %}">Service</a></li>
+              <li><a href="{% url 'sale' %}">Sales</a></li>
+              <li><a href="{% url 'contacts' %}">Contact</a></li>
+              {% if request.user.is_authenticated %}
+              <li><a href="{% url 'logout' %}">Sign out</a></li>
+              <li>Hello {{ request.user.username }}</li>
+              {% else %}
+                <li><a href="{% url 'register' %}">Sign in</a></li>
+              {% endif %}
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+<!--    -------- About Section Start ------------- -->
+  <section class="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 col-md-12 m-auto">
+          <div class="sec-heading">
+            <img src="{% static 'images/butterfly.png' %}" alt="">
+            <span class="tagline">ABOUT OUR SERVICES</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+<!--    -------- About Section End ------------- -->
+<div class="comment">
+  <img src="{% static 'images/srvc.png' %}" alt="">
+ 
+</div>
+
+
+<section class="service">
+    <div class="service-caro owl-carousel">
+      {% for i in service1|slice:":4"%}
+      <div class="single-service">
+        <img src="{{ i.img.url }}" alt="">
+        <div class="service-hover">
+          <img src="{% static 'images/icons/1.png' %}" alt="">
+          <span>{{ i.category }}</span>
+        </div>
+      </div>
+      {% endfor %}
+
+      <div class="single-service">
+        <img src="images/service/2.jpg" alt="">
+        <div class="service-hover">
+          <img src="images/icons/1.png" alt="">
+          <span>Nails</span>
+        </div>
+      </div>
+
+      <div class="single-service">
+        <img src="images/service/3.jpg" alt="">
+        <div class="service-hover">
+          <img src="images/icons/1.png" alt="">
+          <span>Beauty Makeup</span>
+        </div>
+      </div>
+
+      <div class="single-service">
+        <img src="images/service/4.jpg" alt="">
+        <div class="service-hover">
+          <img src="images/icons/1.png" alt="">
+          <span>Body Treatment</span>
+        </div>
+      </div>
+    </div>
+    <div class="sec-heading">
+            <h3 class="sec-title1">We are glad to welcome you to the bath and health complex Softpllow Beauty Salon!</h3>
+            <p>It’s the end of summer the sweltering heat makes human sweat in the night and makes the plants and trees wilt even in the moonlit nights. The eastern wind breeze brings an eerie feeling, that the monsoon clouds are soon coming, there is a strange silence in the ears, the sky gets darker and darker</p>
+          
+    <p>The word "Softpllow" is translated from Kazakh as "softness". Our complex is a truly inexhaustible source of eternal youth, beauty and health. Now Softpllow Beauty Salon is not just a famous landmark of the sunny city of Almaty. During its existence, the complex has turned into a comfortable resort that combines the traditions of the East and high technologies.</p>
+<p>To relax and get real pleasure, you do not need to spend time and money on a good country sanatorium. Everything that is required for a comfortable stay and the appearance of a good mood is located in the center of the southern capital of our Motherland.</p>
+<h3 class="sec-title1">Softpllow Beauty Salon has united: </h3>
+<p><b>• Bath complex</b> — original traditions of Russian, Finnish and Turkish baths, new equipment, professional bathers, a wide range of cosmetic and relaxing procedures;
+
+<p> <b> • Bath luxe-rooms </b> - areas for relaxation with the family, as well as for friendly meetings or corporate events. Our staff will make sure you feel energized, energized and have a good time; </p>
+
+<p> <b> • Wellness spa-salon, </b> including two departments:
+1. Wellness & SPA (hydropathic establishment) - more than twenty water-health procedures for your beauty and health. Experienced and attentive staff, the latest equipment, discounts on services, all conditions to relax and improve your well-being. </p>
+2. Detox & SPA (massage SPA-salon) - unique procedures, exotic and segmental massages for cleansing, rejuvenating, restoring the physical and emotional balance of the body, as well as complex SPA programs using natural cosmetic products.
+
+<p> <b> • Arasan Fitness </b> - a gym with premium sports equipment Technogym (made in Italy), professional trainers, effective group programs. Everything you need to maintain excellent physical shape; </p>
+
+<p> <b> • Beauty Studio </b> - an exceptional opportunity to relax and take care of your appearance. Guests are offered the services of cosmetologists, hairdressers, masseurs, nail masters; </p>
+
+<p> <b> • Lobby & Rest Bar </b> - on the territory of Arasan Wellness & SPA there are five luxury catering establishments, and the pearl of the complex - a cozy lobby bar offers guests all the most delicious and exquisite. The menu will certainly have what you want, and its luxurious interior sets you up for friendly communication and gives you a great rest. </p>
+
+<p> <b> • Boutique & Care </b> is the largest store of caring organic cosmetics and bath accessories in Almaty. Especially for you: delivery of goods from the world's leading manufacturers without intermediaries, personal advice and very pleasant prices. </p>
+<p> <b> • Boutique & Care </b> is the largest store of caring organic cosmetics and bath accessories in Almaty. Especially for you: delivery of goods from the world's leading manufacturers without intermediaries, personal advice and very pleasant prices. </p>
+<h3 class = "sec-title1"> A building we are proud of! </h3>
+<p> Our complex is located in a building that is considered a bright original architectural monument of republican significance and is under state protection. The complex was built in 1979-1982. and acquired the status of an exclusive attraction of the southern capital of Kazakhstan in the first years of its appearance. The grandiose and majestic building of Arasan Wellness & SPA instantly wins the hearts of our country's guests. </p>
+<p> In 2016, restoration work was completed in Arasan Wellness & SPA and a major overhaul was carried out. We are proud that we managed to preserve the oriental flavor and uniqueness of our complex, improving its functional qualities - after all, the best architects in the world worked on the project. </p>
+<p> Today, the bath and health complex Arasan Wellness & SPA is a combination of a magnificent interior and engineering thought of the XX and XXI centuries. The secret of the uniqueness of the complex lies in the combination of individual technologies and inimitable oriental architecture. The interior of Arasan Wellness & SPA is made of marble and other natural stones - materials known for their fantastic beauty, stunning energy and antibacterial properties. </p>
+<p> We keep pace with the times, offering excellent conditions for recovery and rejuvenation. </p>
+<p> • exclusive complex programs;
+• innovative technologies and services for rejuvenation and health. </p>
+</div>
+  </section>
+
+    
+  
+
+    
+    
+
+        
+    
+
+    
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <a href="index.html" class="logo foo-logo">
+            <img src="images/logo.png" alt="">
+          </a>
+          <nav class="foo-nav">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="services.html">Service</a></li>
+              <li><a href="sales.html">Sales</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+          <div class="foo-social">
+            <a href="https://www.facebook.com/"><i class="ti-facebook"></i></a>
+            <a href="https://twitter.com/"><i class="ti-twitter-alt"></i></a>
+            <a href="https://instagram.com/"><i class="ti-instagram"></i></a>
+          </div>
+          <p class="copyright">COPYRIGHT SOFTPLLOW 2019 ALL RIGHTS RESERVED.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+    </div>
+  </body>
+
+</html>
+
